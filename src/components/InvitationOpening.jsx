@@ -18,9 +18,9 @@ function InvitationOpening({ onOpen }) {
   };
 
   return (
-    <section className={`art-invitation ${stage}`}>
+    <section className={`art-invitation io-scene ${stage}`}>
 
-      {/* Desktop invitation artwork */}
+      {/* DESKTOP INVITATION */}
       <img
         src={invitationOpen}
         className="open-invitation-art desktop-only"
@@ -28,24 +28,23 @@ function InvitationOpening({ onOpen }) {
         fetchPriority="high"
       />
 
-      {/* Mobile invitation card */}
-      <div className="mobile-invitation-card">
+      {/* MOBILE INVITATION CARD */}
+      <div className="io-mobile-card">
+        <div className="io-card-inner">
 
-        <div className="mobile-card-frame">
-
-          <div className="mobile-card-top">
-            ✦ <span>❀</span> ✦
+          <div className="io-decoration-top">
+            ✦ ❀ ✦
           </div>
 
-          <p className="mobile-kicker">
+          <p className="io-kicker">
             Together with our families
           </p>
 
-          <p className="mobile-intro">
+          <p className="io-intro">
             We're getting married
           </p>
 
-          <div className="mobile-heart">♥</div>
+          <div className="io-heart">♥</div>
 
           <h1>
             Kausalya
@@ -53,47 +52,39 @@ function InvitationOpening({ onOpen }) {
             Raghav
           </h1>
 
-          <div className="mobile-divider">
+          <div className="io-divider">
             ✦ ─ ❀ ─ ✦
           </div>
 
-          <div className="mobile-event">
-            <div className="mobile-event-icon">🥂</div>
+          <div className="io-event">
+            <div className="io-event-icon">🥂</div>
             <strong>Reception</strong>
             <span>05 December 2026</span>
             <small>7:30 PM onwards</small>
           </div>
 
-          <div className="mobile-event-separator">
-            ❀
-          </div>
+          <div className="io-flower-divider">❀</div>
 
-          <div className="mobile-event">
-            <div className="mobile-event-icon">💍</div>
+          <div className="io-event">
+            <div className="io-event-icon">💍</div>
             <strong>Wedding Ceremony</strong>
             <span>06 December 2026</span>
             <small>7:30 AM onwards</small>
           </div>
 
-          <div className="mobile-divider">
+          <div className="io-divider">
             ✦ ─ ❀ ─ ✦
           </div>
 
-          {/* Show open button before animation */}
-          {stage === "closed" && (
-            <button
-              className="mobile-open-button"
-              onClick={startOpening}
-              type="button"
-            >
-              Open Our Invitation ✧
-            </button>
+          {stage === "opening" && (
+            <p className="io-opening-message">
+              Your invitation awaits...
+            </p>
           )}
 
-          {/* Show enter button after animation */}
           {stage === "revealed" && (
             <button
-              className="mobile-enter-button"
+              className="io-enter-button"
               onClick={onOpen}
               type="button"
             >
@@ -101,22 +92,16 @@ function InvitationOpening({ onOpen }) {
             </button>
           )}
 
-          {stage === "opening" && (
-            <p className="mobile-opening-text">
-              Opening your invitation...
-            </p>
-          )}
-
-          <div className="mobile-card-bottom">
-            ❀ <span>✿</span> ❀
+          <div className="io-decoration-bottom">
+            ❀ ✿ ❀
           </div>
 
         </div>
       </div>
 
-      {/* Left curtain */}
+      {/* LEFT CURTAIN */}
       <motion.div
-        className="art-curtain art-curtain-left"
+        className="io-curtain io-curtain-left"
         initial={{ x: "0%" }}
         animate={{
           x: opening ? "-105%" : "0%"
@@ -129,9 +114,9 @@ function InvitationOpening({ onOpen }) {
         <img src={curtainLeft} alt="" />
       </motion.div>
 
-      {/* Right curtain */}
+      {/* RIGHT CURTAIN */}
       <motion.div
-        className="art-curtain art-curtain-right"
+        className="io-curtain io-curtain-right"
         initial={{ x: "0%" }}
         animate={{
           x: opening ? "105%" : "0%"
@@ -149,7 +134,18 @@ function InvitationOpening({ onOpen }) {
         <img src={curtainRight} alt="" />
       </motion.div>
 
-      {/* Desktop open button area */}
+      {/* MOBILE OPEN BUTTON */}
+      {stage === "closed" && (
+        <button
+          className="io-open-button"
+          onClick={startOpening}
+          type="button"
+        >
+          Open Our Invitation ✧
+        </button>
+      )}
+
+      {/* DESKTOP OPEN BUTTON */}
       {!opening && (
         <button
           className="art-open-hitarea desktop-only"
@@ -159,7 +155,7 @@ function InvitationOpening({ onOpen }) {
         />
       )}
 
-      {/* Desktop enter button area */}
+      {/* DESKTOP ENTER BUTTON */}
       {stage === "revealed" && (
         <button
           className="art-enter-hitarea desktop-only"

@@ -4070,3 +4070,397 @@ font-size:1.5rem;
   }
 
 }
+
+/* FIX: Mobile invitation card hidden behind curtains */
+
+@media (max-width: 768px) {
+
+  .art-invitation {
+    position: relative;
+    isolation: isolate;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
+  /* Keep invitation card visible above curtains */
+  .mobile-invitation-card {
+    display: block !important;
+    position: relative;
+    z-index: 10 !important;
+    width: min(100%, 390px);
+    margin: auto;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Put curtains behind the invitation card */
+  .art-curtain {
+    z-index: 2 !important;
+    pointer-events: none;
+  }
+
+  .mobile-open-button,
+  .mobile-enter-button {
+    position: relative;
+    z-index: 12;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .art-invitation.closed .mobile-invitation-card {
+    display: block !important;
+  }
+
+}
+
+/* =========================================
+   WEDDING INVITATION - RESPONSIVE OPENING
+========================================= */
+
+/* Main scene */
+
+.io-scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #f4e6d0;
+  isolation: isolate;
+}
+
+/* Desktop artwork */
+
+.io-scene .open-invitation-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Curtains */
+
+.io-curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.io-curtain-left {
+  left: 0;
+}
+
+.io-curtain-right {
+  right: 0;
+}
+
+.io-curtain img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile elements hidden on desktop */
+
+.io-mobile-card,
+.io-open-button {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE INVITATION
+========================================= */
+
+@media (max-width: 768px) {
+
+  .io-scene {
+    width: 100%;
+    height: 100svh;
+    min-height: 600px;
+    padding: 16px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        ellipse at center,
+        #fffaf0 0%,
+        #f4e5c9 75%,
+        #e6cda5 100%
+      );
+  }
+
+  /* Hide desktop design and desktop controls */
+
+  .io-scene .desktop-only,
+  .io-scene .open-invitation-art {
+    display: none !important;
+  }
+
+  /* Invitation card */
+
+  .io-scene .io-mobile-card {
+    display: block !important;
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 370px);
+    max-height: calc(100svh - 32px);
+    overflow-y: auto;
+
+    padding: 11px;
+
+    background: linear-gradient(
+      145deg,
+      #fffaf0,
+      #f7e8cd,
+      #fff9ee
+    );
+
+    border: 1px solid #bd9148;
+
+    box-shadow:
+      0 12px 40px rgba(83, 45, 29, 0.18),
+      inset 0 0 0 4px #fffaf0,
+      inset 0 0 0 5px rgba(183, 137, 65, 0.5);
+  }
+
+  .io-card-inner {
+    padding: 28px 14px 22px;
+    text-align: center;
+
+    border: 1px solid rgba(179, 132, 58, 0.55);
+
+    background:
+      radial-gradient(
+        circle at top,
+        rgba(226, 194, 137, 0.18),
+        transparent 50%
+      );
+  }
+
+  .io-decoration-top {
+    color: #b28a42;
+    font-size: 27px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+  }
+
+  .io-kicker {
+    color: #97743d;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .io-intro {
+    color: #70313c;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .io-heart {
+    color: #8a203e;
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .io-mobile-card h1 {
+    color: #84213d;
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: clamp(42px, 11vw, 56px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.05;
+    margin: 12px 0;
+  }
+
+  .io-mobile-card h1 span {
+    display: block;
+    color: #b68b42;
+    font-size: 29px;
+    margin: 5px 0;
+  }
+
+  .io-divider {
+    color: #b38a43;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin: 20px 0;
+  }
+
+  .io-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 17px 0;
+  }
+
+  .io-event-icon {
+    font-size: 21px;
+    margin-bottom: 3px;
+  }
+
+  .io-event strong {
+    color: #84213d;
+    font-family: Georgia, serif;
+    font-size: 21px;
+  }
+
+  .io-event span {
+    color: #4d302a;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .io-event small {
+    color: #765a47;
+    font-size: 13px;
+  }
+
+  .io-flower-divider {
+    color: #b38a43;
+    font-size: 20px;
+  }
+
+  .io-decoration-bottom {
+    color: #b38a43;
+    font-size: 23px;
+    letter-spacing: 8px;
+    margin-top: 22px;
+  }
+
+  /* Mobile curtain layer */
+
+  .io-scene .io-curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .io-scene .io-curtain-left {
+    left: 0;
+  }
+
+  .io-scene .io-curtain-right {
+    right: 0;
+  }
+
+  .io-scene .io-curtain img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Open button above the curtains */
+
+  .io-scene .io-open-button {
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+
+    bottom: max(48px, env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(85%, 290px);
+    padding: 15px 12px;
+
+    border: 1px solid #d6b46d;
+    border-radius: 5px;
+
+    background: linear-gradient(
+      135deg,
+      #74172f,
+      #a52d48,
+      #74172f
+    );
+
+    color: #fff5dd;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 20px rgba(92, 25, 44, 0.3);
+    cursor: pointer;
+  }
+
+  /* Enter button after curtain animation */
+
+  .io-enter-button {
+    display: block;
+    width: min(100%, 280px);
+    margin: 24px auto 10px;
+    padding: 15px 12px;
+
+    border: 1px solid #d6b46d;
+    border-radius: 5px;
+
+    background: linear-gradient(
+      135deg,
+      #74172f,
+      #a52d48,
+      #74172f
+    );
+
+    color: #fff5dd;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .io-opening-message {
+    color: #84213d;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    margin: 24px 0;
+  }
+
+}
+
+/* Smaller mobile screens */
+
+@media (max-width: 360px) {
+
+  .io-scene {
+    padding: 10px 8px;
+  }
+
+  .io-scene .io-mobile-card {
+    padding: 8px;
+  }
+
+  .io-card-inner {
+    padding: 22px 10px;
+  }
+
+  .io-mobile-card h1 {
+    font-size: 42px;
+  }
+
+  .io-event strong {
+    font-size: 19px;
+  }
+
+}
