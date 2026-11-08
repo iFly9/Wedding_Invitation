@@ -145,7 +145,8 @@ function LightboxGallery() {
               src={item.image}
               className="gallery-img"
               alt={item.title}
-
+               loading="lazy"
+              decoding="async"
               whileHover={{
                 scale: 1.05
               }}
