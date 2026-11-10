@@ -1,7 +1,7 @@
 import useCountdown from "../hooks/useCountdown";
 
 function Countdown() {
-  const targetDate = "2026-12-12T10:00:00";
+  const targetDate = "2026-05-12T10:00:00";
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
 
   return (
