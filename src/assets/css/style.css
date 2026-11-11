@@ -397,17 +397,27 @@ height:100%;
 .music-player {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 19px;
   z-index: 999;
 }
 
 .music-player button {
-  background: #7b1e3a;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 50%;
-  font-size: 16px;
+  bottom: 20px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #7f1d3f;
+    color: #fff;
+    border: 0px solid #d4af37;
+    border-radius: 50%;
+    font-size: 18px;
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
 .scroll-bar {
