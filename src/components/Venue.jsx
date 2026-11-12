@@ -44,7 +44,7 @@ function Venue() {
             <h3>✨ Sri Sai Leela Ranga Mandira</h3>
 
             <p className="venue-location">
-              Bengaluru, Karnataka
+              Hospet, Karnataka
             </p>
 
             <FaHeart className="venue-heart" />
