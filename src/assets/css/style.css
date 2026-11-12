@@ -4659,17 +4659,35 @@ body:has(.io-scene) {
   z-index: 999999 !important;
 }
 
-/* iPhone Safari curtain coverage test */
+
+/* iPhone Safari / WhatsApp browser: lock page behind curtains */
 @supports (-webkit-touch-callout: none) {
-  .io-scene {
+  html:has(.io-scene) {
+    height: 100%;
+    overflow: hidden !important;
+  }
+
+  body:has(.io-scene) {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    min-height: 100% !important;
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+  }
+
+  #root:has(.io-scene) {
+    height: 100%;
+    overflow: hidden !important;
+  }
+
+  .io-scene {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
     overflow: hidden !important;
     background: transparent !important;
     z-index: 999999 !important;
