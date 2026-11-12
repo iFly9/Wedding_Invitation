@@ -8,8 +8,15 @@ function Events() {
     {
       icon: <FaHeart />,
       title: "Mehendi Ceremony",
-      date: "04 December 2026",
+      date: "05 December 2026",
       time: "6:00 PM",
+      location: "Sri Sai Lilaranga Mandhira",
+    },
+     {
+      icon: <FaGlassCheers />,
+      title: "Reception",
+      date: "05 December 2026",
+      time: "7:00 PM",
       location: "Sri Sai Lilaranga Mandhira",
     },
     {
@@ -18,14 +25,8 @@ function Events() {
       date: "06 December 2026",
       time: "07:00 AM",
       location: "Sri Sai Lilaranga Mandhira",
-    },
-    {
-      icon: <FaGlassCheers />,
-      title: "Reception",
-      date: "05 December 2026",
-      time: "7:00 PM",
-      location: "Sri Sai Lilaranga Mandhira",
-    },
+    }
+   
   ];
 
 

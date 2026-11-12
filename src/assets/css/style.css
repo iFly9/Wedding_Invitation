@@ -4641,3 +4641,17 @@ font-size:1.5rem;
 .art-open-hitarea {
   z-index: 1000001 !important;
 }
+/* Prevent Home page scrolling while curtains are closed */
+html:has(.io-scene),
+body:has(.io-scene) {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
+.io-scene {
+  position: fixed !important;
+  inset: 0 !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+  z-index: 999999 !important;
+}
