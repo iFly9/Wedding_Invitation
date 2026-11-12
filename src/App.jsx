@@ -9,12 +9,12 @@ function App() {
 
   return (
     <ThemeProvider>
-      {!invitationOpened ? (
+      <Home />
+
+      {!invitationOpened && (
         <InvitationOpening
           onOpen={() => setInvitationOpened(true)}
         />
-      ) : (
-        <Home />
       )}
     </ThemeProvider>
   );

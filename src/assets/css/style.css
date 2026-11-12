@@ -4573,3 +4573,13 @@ font-size:1.5rem;
   }
 }
 
+/* Wedding curtains overlay */
+.io-scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 99999;
+  overflow: hidden;
+  background: transparent !important;
+}
