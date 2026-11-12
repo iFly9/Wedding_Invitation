@@ -4596,25 +4596,18 @@ font-size:1.5rem;
    FINAL WEDDING CURTAIN OVERLAY
 ========================================= */
 
-/* iPhone Safari viewport and bottom-toolbar fix */
 .io-scene {
   position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: -120px !important;
-
+  inset: 0 !important;
   width: 100% !important;
-  height: calc(100dvh + 120px) !important;
-  min-height: 0 !important;
-
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
   padding: 0 !important;
   margin: 0 !important;
-
+  z-index: 999999 !important;
   overflow: hidden !important;
   background: transparent !important;
-
-  z-index: 999999 !important;
   isolation: isolate;
 }
 
@@ -4625,7 +4618,7 @@ font-size:1.5rem;
   width: 50% !important;
   height: 100% !important;
   overflow: hidden !important;
-  z-index: 5 !important;
+  z-index: 5;
 }
 
 .io-curtain-left {
@@ -4637,8 +4630,28 @@ font-size:1.5rem;
 }
 
 .io-curtain img {
-  display: block !important;
+  display: block;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+}
+
+/* Opening button */
+.io-open-button,
+.art-open-hitarea {
+  z-index: 1000001 !important;
+}
+/* Prevent Home page scrolling while curtains are closed */
+html:has(.io-scene),
+body:has(.io-scene) {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
+.io-scene {
+  position: fixed !important;
+  inset: 0 !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+  z-index: 999999 !important;
 }
