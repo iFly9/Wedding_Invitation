@@ -4154,10 +4154,11 @@ font-size:1.5rem;
 .io-scene {
   position: fixed !important;
   inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  height: 100dvh !important;
-  min-height: 100dvh !important;
+  width: 100% !important;
+  height: 100lvh !important;
+  min-height: 100lvh !important;
+  padding: 0 !important;
+  margin: 0 !important;
   z-index: 999999 !important;
   overflow: hidden !important;
   background: transparent !important;
