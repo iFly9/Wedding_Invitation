@@ -450,18 +450,22 @@ height:100%;
   border-color: #d4af37;
   box-shadow: 0 0 10px rgba(212,175,55,0.3);
 }
+/* Floating WhatsApp invitation button */
 .whatsapp-float {
   position: fixed;
-  right: 20px;
-  bottom: 160px;
+  right: 16px;
+  bottom: calc(160px + env(safe-area-inset-bottom, 0px));
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
   background: #25D366;
   color: white;
   padding: 12px 16px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
+  white-space: nowrap;
   z-index: 999;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .whatsapp-float:hover {
@@ -4490,3 +4494,82 @@ font-size:1.5rem;
   }
 
 }
+/* Android and other small screens */
+@media (max-width: 576px) {
+  .whatsapp-float {
+    right: 12px;
+    bottom: calc(150px + env(safe-area-inset-bottom, 0px));
+    font-size: 13px;
+    padding: 10px 13px;
+  }
+
+  .theme-btn {
+    left: 12px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+
+/* ==========================================
+   ANDROID MOBILE VIEWPORT FIX
+   ========================================== */
+
+@media (max-width: 767px) {
+
+  /* Keep fixed navbar within visible viewport */
+  .navbar.fixed-top {
+    width: 100dvw !important;
+    max-width: 100dvw !important;
+    left: 0 !important;
+    right: auto !important;
+    box-sizing: border-box;
+  }
+
+  /* Hearts background */
+  .hearts-container {
+    width: 100dvw !important;
+    max-width: 100dvw !important;
+    left: 0 !important;
+    right: auto !important;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  /* WhatsApp share */
+  .whatsapp-float {
+    right: max(12px, calc(100vw - 100dvw + 12px)) !important;
+    max-width: calc(100dvw - 24px);
+    box-sizing: border-box;
+  }
+
+  /* Music control */
+  .music-player {
+    right: max(12px, calc(100vw - 100dvw + 12px)) !important;
+  }
+
+  /* Theme control */
+  .theme-btn {
+    left: 12px !important;
+  }
+
+  /* Prevent horizontal page overflow */
+  html,
+  body,
+  #root {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+}
+
+/* Adjust Share Invite button position */
+.whatsapp-float {
+  bottom: 95px !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 767px) {
+  .whatsapp-float {
+    bottom: calc(85px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+

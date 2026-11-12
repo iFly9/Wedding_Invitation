@@ -218,21 +218,7 @@ return (
 
 
 
-<a
 
-className="whatsapp-btn"
-
-href="https://wa.me/?text=You're invited to our wedding 💍"
-
-target="_blank"
-
-rel="noreferrer"
-
->
-
-Share
-
-</a>
 
 <footer className="developer-credit">
   <p>Made with <span>♥</span> and care</p>
