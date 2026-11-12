@@ -4612,15 +4612,17 @@ font-size:1.5rem;
   isolation: isolate;
 }
 
+
 .io-curtain {
   position: absolute !important;
   top: 0 !important;
-  bottom: 0 !important;
+  bottom: -180px !important;
   width: 50% !important;
-  height: 100% !important;
+  height: auto !important;
   overflow: hidden !important;
   z-index: 5;
 }
+
 
 .io-curtain-left {
   left: 0 !important;
