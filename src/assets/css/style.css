@@ -4583,3 +4583,39 @@ font-size:1.5rem;
   overflow: hidden;
   background: transparent !important;
 }
+
+/* FIX: Cover the complete iPhone screen during curtain opening */
+.io-scene {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  z-index: 999999 !important;
+  overflow: hidden !important;
+  background: #d9b58c !important;
+  isolation: isolate;
+}
+
+/* Make both curtains cover the full screen */
+.io-curtain {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.io-curtain img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Keep the opening button above the curtains */
+.io-open-button,
+.art-open-hitarea {
+  z-index: 1000001 !important;
+}
+
