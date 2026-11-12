@@ -4660,7 +4660,7 @@ body:has(.io-scene) {
 }
 
 /* iPhone Safari curtain coverage test */
-/*@supports (-webkit-touch-callout: none) {
+@supports (-webkit-touch-callout: none) {
   .io-scene {
     position: fixed !important;
     top: 0 !important;
@@ -4673,25 +4673,5 @@ body:has(.io-scene) {
     overflow: hidden !important;
     background: transparent !important;
     z-index: 999999 !important;
-  }
-} */
-
-/* Temporary iPhone Safari viewport test */
-@supports (-webkit-touch-callout: none) {
-  @media screen and (max-width: 767px) {
-    .io-scene {
-      outline: 3px solid red !important;
-    }
-
-    .io-scene::after {
-      content: "Width: " attr(data-width);
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 9999999;
-      background: yellow;
-      color: black;
-      padding: 8px;
-    }
   }
 }

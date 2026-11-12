@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import curtainLeft from "../assets/images/curtain-left.jpg";
@@ -13,17 +13,7 @@ function InvitationOpening({ onOpen }) {
       setStage("opening");
     }
   };
-  useEffect(() => {
-  const showSize = () => {
-    alert(
-      `Screen: ${window.screen.width} × ${window.screen.height}\n` +
-      `Viewport: ${window.innerWidth} × ${window.innerHeight}\n` +
-      `Visible height: ${window.visualViewport?.height}`
-    );
-  };
-
-  showSize();
-}, []);
+  
   return (
     <section className="art-invitation io-scene">
       {/* LEFT CURTAIN */}
