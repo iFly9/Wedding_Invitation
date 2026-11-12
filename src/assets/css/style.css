@@ -19,7 +19,7 @@ backdrop-filter:blur(15px);
 
 /* ================= HERO ================= */
 .hero {
-    background-image:url("../images/hero-desktop.png");
+    background-image:url("../images/hero-desktop.jpg");
     position: relative;
     min-height: 100svh;
      scroll-margin-top: 90px;
@@ -34,7 +34,7 @@ backdrop-filter:blur(15px);
 @media(max-width:768px){
 
 .hero{
- background-image:url("../images/hero-mobile.png");
+ background-image:url("../images/hero-mobile.jpg");
 position: relative;
     min-height: 100svh;
      scroll-margin-top: 90px;
