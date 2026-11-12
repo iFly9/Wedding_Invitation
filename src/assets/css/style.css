@@ -4149,16 +4149,35 @@ font-size:1.5rem;
 
 /* Main scene */
 
+
+/* Curtain overlay - show Home page behind it */
 .io-scene {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100svh;
-  min-height: 600px;
-  overflow: hidden;
-  background: #f4e6d0;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  z-index: 999999 !important;
+  overflow: hidden !important;
+  background: transparent !important;
   isolation: isolate;
 }
+
+.io-curtain {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.io-curtain img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
 
 /* Desktop artwork */
 
@@ -4573,49 +4592,52 @@ font-size:1.5rem;
   }
 }
 
-/* Wedding curtains overlay */
-.io-scene {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100dvh;
-  z-index: 99999;
-  overflow: hidden;
-  background: transparent !important;
-}
+/* =========================================
+   FINAL WEDDING CURTAIN OVERLAY
+========================================= */
 
-/* FIX: Cover the complete iPhone screen during curtain opening */
 .io-scene {
   position: fixed !important;
   inset: 0 !important;
-  width: 100vw !important;
+  width: 100% !important;
   height: 100vh !important;
   height: 100dvh !important;
   min-height: 100dvh !important;
+  padding: 0 !important;
+  margin: 0 !important;
   z-index: 999999 !important;
   overflow: hidden !important;
-  background: #d9b58c !important;
+  background: transparent !important;
   isolation: isolate;
 }
 
-/* Make both curtains cover the full screen */
 .io-curtain {
   position: absolute !important;
   top: 0 !important;
   bottom: 0 !important;
+  width: 50% !important;
   height: 100% !important;
   overflow: hidden !important;
+  z-index: 5;
+}
+
+.io-curtain-left {
+  left: 0 !important;
+}
+
+.io-curtain-right {
+  right: 0 !important;
 }
 
 .io-curtain img {
+  display: block;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
 }
 
-/* Keep the opening button above the curtains */
+/* Opening button */
 .io-open-button,
 .art-open-hitarea {
   z-index: 1000001 !important;
 }
-
