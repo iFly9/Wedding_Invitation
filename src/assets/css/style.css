@@ -4503,10 +4503,10 @@ font-size:1.5rem;
     padding: 10px 13px;
   }
 
-  .theme-btn {
-    left: 12px;
+  /*.theme-btn {
+    /*left: 12px; 
     bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  }
+  }*/
 }
 
 
@@ -4548,9 +4548,9 @@ font-size:1.5rem;
   }
 
   /* Theme control */
-  .theme-btn {
+  /* .theme-btn {
     left: 12px !important;
-  }
+  }  */
 
   /* Prevent horizontal page overflow */
   html,
